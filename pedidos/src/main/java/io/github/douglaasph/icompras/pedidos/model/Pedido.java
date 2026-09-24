@@ -1,5 +1,6 @@
 package io.github.douglaasph.icompras.pedidos.model;
 
+import io.github.douglaasph.icompras.pedidos.client.representation.ClienteRepresentation;
 import io.github.douglaasph.icompras.pedidos.model.enums.StatusPedido;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -48,4 +49,7 @@ public class Pedido {
 
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
+
+    @Transient
+    private ClienteRepresentation dadosCliente;
 }
