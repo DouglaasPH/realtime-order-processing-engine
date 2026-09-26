@@ -17,7 +17,8 @@ create table clientes (
     numero varchar(10),
     bairro varchar(100),
     email varchar(150),
-    telefone varchar(20)
+    telefone varchar(20),
+    ativo boolean not null
 );
 
 
@@ -34,7 +35,8 @@ create table pedido (
       ),
                         total decimal(16,2) not null,
                         codigo_rastreio varchar(255),
-                        url_nf text
+                        url_nf text,
+                        ativo boolean not null
 );
 
 create table item_pedido (
