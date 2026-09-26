@@ -24,7 +24,7 @@ public class PedidoPagoSubscriber {
             log.info("Recebendo pedido para faturamento: {}", json);
             var representation = mapper.readValue(json, DetalhePedidoRepresentation.class);
             Pedido pedido = pedidoMapper.map(representation);
-            service.gerar(pedido) ;
+            service.gerar(pedido);
         } catch (Exception e) {
             log.error("Erro na consumação do topico de pedidos pagos: {}", e.getMessage());
         }

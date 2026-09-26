@@ -15,8 +15,14 @@ public class AtualizacaoStatusPedidoService {
     public void atualizarStatus(Long codigo, StatusPedido status, String urlNotaFiscal, String rastreio) {
         repository.findById(codigo).ifPresent(pedido -> {
             pedido.setStatus(status);
-            pedido.setUrlNotaFiscal(urlNotaFiscal);
-            pedido.setCodigoRastreio(rastreio);
+
+            if (urlNotaFiscal != null) {
+                pedido.setUrlNotaFiscal(urlNotaFiscal);
+            }
+
+            if (rastreio != null) {
+                pedido.setCodigoRastreio(rastreio);
+            }
         });
     }
 }

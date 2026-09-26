@@ -27,7 +27,7 @@ public class AtualizacaoStatusPedidoSubscriber {
                     objectMapper.readValue(json, AtualizacaoStatusPedidoRepresentation.class);
             service.atualizarStatus(
                     atualizacaoStatus.codigo(),
-                    atualizacaoStatus.status(),
+                    atualizacaoStatus.statusPedido(),
                     atualizacaoStatus.urlNotaFiscal(),
                     atualizacaoStatus.codigoRastreio()
             );

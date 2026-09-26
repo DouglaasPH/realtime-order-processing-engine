@@ -19,4 +19,9 @@ public class ProdutoService {
     public Optional<Produto> obterPorCodigo(Long codigo) {
         return repository.findById(codigo);
     }
+
+    public void deletar(Produto produto) {
+        produto.setAtivo(false);
+        repository.save(produto);
+    }
 }
